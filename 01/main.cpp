@@ -33,18 +33,16 @@ int main() {
 	if (leftSide.empty() || rightSide.empty()) {
 		std::cerr << "\033[31m[DEBUG] One of the vectors is empty!\033[0m\n";
 		return 1;
-	} else {
-		std::cout << "\033[32m[DEBUG]Sorting...\033[0m\n";
-		std::sort(leftSide.begin(), leftSide.end());
-		std::sort(rightSide.begin(), rightSide.end());
-	}
+	} 
+	
+	std::sort(leftSide.begin(), leftSide.end());
+	std::sort(rightSide.begin(), rightSide.end());
+	
 	
 	if (leftSide.size() != rightSide.size()) {
 		std::cout << "\033[31m[DEBUG] Left and right side are not equal!\033[0m\n";
-	} else {
-		std::cout << "\033[32m[DEBUG] Left and right side are equal!\033[0m\n";
 	}
-
+	
 	// calculate the distance of each row
 	std::vector<int> distances;
 	int distance = 0;
@@ -63,10 +61,34 @@ int main() {
 		std::cerr << "\033[31mNo distances available to calculate average!\n";
 		return 1;
 	} else {
-		int averageDistance = totalDistance / distances.size();
-		std::cout << "\033[32mThe absolute distance amounts to " << averageDistance << "\033[0m\n";
+		std::cout << "\033[32mThe absolute distance amounts to " << totalDistance << "\033[0m\n";
+	}
+	
+	//count the frequency of element i of leftSide in rightSide
+	std::vector<int> frequencies;
+	int frequency = 0;
+	for (int i = 0; i < leftSide.size(); i++) {
+		frequency = std::count(rightSide.begin(), rightSide.end(), leftSide[i]);
+		frequencies.push_back(frequency);
 	}
 
+	if (leftSide.size() != frequencies.size()) {
+		std::cerr << "\033[31m[DEBUG] Error frequencies size does not match left side!\033[0m\n";
+	}
+
+	std::vector<int> similarities;
+	int similarity = 0;
+	for (int i = 0; i < leftSide.size(); i++) {
+		similarity = leftSide[i] * frequencies[i];
+		similarities.push_back(similarity);
+	}
+
+	int totalSimilarity = 0;
+	for (int i = 0; i < leftSide.size(); i++) {
+		totalSimilarity += similarities[i];
+	}
+
+	std::cout << "\033[32mThe total similarity amounts to " << totalSimilarity << "\033[0m\n";
 
 	return 0;
 }
