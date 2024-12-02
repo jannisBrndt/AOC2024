@@ -1,0 +1,11 @@
+ToDo:
+
+- read in the text file
+
+- split into left and right side
+
+- sort from smallest to biggest for each side
+
+- calculate distance betwween left and right side for each row
+
+- calculate total distance
