@@ -1,0 +1,2 @@
+- extract instances of syntax of function mul(int a, int b)
+- calculate sum of all instances

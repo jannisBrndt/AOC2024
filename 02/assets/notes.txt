@@ -1,0 +1,7 @@
+- per row check for gradual increases in "level" (a level is an element in a row)
+
+- load data
+
+- analyze
+
+- analyze
