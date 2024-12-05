@@ -1,3 +1,0 @@
-/Users/jannis/DEsktop/AOC_2024/02/build/CMakeFiles/02.dir
-/Users/jannis/DEsktop/AOC_2024/02/build/CMakeFiles/edit_cache.dir
-/Users/jannis/DEsktop/AOC_2024/02/build/CMakeFiles/rebuild_cache.dir
