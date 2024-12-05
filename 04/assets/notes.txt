@@ -1,0 +1,5 @@
+- count the occurences of word 'XMAS'
+	- it can be: 
+		- vertically up/down & down/up
+		- horizontally left/right & right/left
+		- diagonally both ways
